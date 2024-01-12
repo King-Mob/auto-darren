@@ -28,14 +28,14 @@ const start = async () => {
     }
   });
 
+  const scriptStart = Date.now();
+
   client.on(RoomEvent.Timeline, function (event, room, toStartOfTimeline) {
     console.log(event.getType());
 
     const roomId = event.event.room_id;
 
     const eventTime = event.event.origin_server_ts;
-
-    const scriptStart = Date.now();
 
     if (scriptStart > eventTime) {
       return; //don't run commands for old messages
