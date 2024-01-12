@@ -1,0 +1,21 @@
+{
+  "name": "adopt-a-darren",
+  "version": "1.0.0",
+  "description": "chatbot with virtual darren",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "chat",
+    "funny"
+  ],
+  "author": "John Evans",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "matrix-js-sdk": "^30.3.0"
+  }
+}
