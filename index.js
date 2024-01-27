@@ -1,6 +1,7 @@
 import "dotenv/config";
 import * as sdk from "matrix-js-sdk";
 import { RoomMemberEvent, RoomEvent } from "matrix-js-sdk";
+import { startServer } from "./server.js";
 
 const { homeserver, user_id, user_password } = process.env;
 
@@ -87,3 +88,4 @@ const start = async () => {
 };
 
 start();
+startServer();
