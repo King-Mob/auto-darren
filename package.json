@@ -2,10 +2,11 @@
   "name": "adopt-a-darren",
   "version": "1.0.0",
   "description": "chatbot with virtual darren",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "keywords": [
     "chat",
@@ -17,6 +18,12 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "matrix-js-sdk": "^30.3.0"
+    "matrix-js-sdk": "^30.3.0",
+    "parcel": "^2.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
   }
 }
