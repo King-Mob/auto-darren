@@ -1,24 +1,13 @@
 import express from "express";
-import path from "path";
 
 export const startServer = () => {
   const app = express();
   app.use(express.json());
 
-  app.get("/", function (req, res) {
-    res.sendFile(path.resolve("web/index.html"));
-  });
+  app.use(express.static("dist"));
 
-  app.get("/favicon.png", function (req, res) {
-    res.sendFile(path.resolve("web/favicon.png"));
-  });
-
-  app.get("/styles.css", (req, res) => {
-    res.sendFile(path.resolve("web/styles.css"));
-  });
-
-  app.get("/scripts.js", (req, res) => {
-    res.sendFile(path.resolve("web/scripts.js"));
+  app.get("/api", function (req, res) {
+    res.send({ api: true, strength: "strong" });
   });
 
   app.listen(8134);
