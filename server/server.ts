@@ -10,5 +10,5 @@ export const startServer = () => {
     res.send({ api: true, strength: "strong" });
   });
 
-  app.listen(8134);
+  app.listen(8135);
 };
