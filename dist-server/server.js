@@ -12,6 +12,6 @@ const startServer = () => {
     app.get("/api", function (req, res) {
         res.send({ api: true, strength: "strong" });
     });
-    app.listen(8134);
+    app.listen(8135);
 };
 exports.startServer = startServer;
