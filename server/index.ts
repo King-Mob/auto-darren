@@ -1,11 +1,10 @@
 import "dotenv/config";
 import * as sdk from "matrix-js-sdk";
-import { RoomMemberEvent, RoomEvent } from "matrix-js-sdk";
+import { RoomMemberEvent, RoomEvent, ClientEvent } from "matrix-js-sdk";
 import { startServer } from "./server.js";
 
 const { homeserver, user_id, user_password } = process.env;
 
-//need to join all whatsapp chats that start
 const start = async () => {
   const client = sdk.createClient({ baseUrl: `https://matrix.${homeserver}` });
 
@@ -13,7 +12,7 @@ const start = async () => {
 
   await client.startClient({ initialSyncLimit: 10 });
 
-  client.once("sync", async (state, prevState, res) => {
+  client.once(ClientEvent.Sync, async (state, prevState, res) => {
     // state will be 'PREPARED' when the client is ready to use
     console.log(state);
   });
