@@ -7,7 +7,7 @@ export default function App() {
     <div>
       <h1>I am Darren, and I'm reacting!</h1>
       <h1>You've made me react {counter} times</h1>
-      <button onClick={() => setCounter(counter + 1)}>Increase</button>
+      <button onClick={() => setCounter(counter + 1)}>React now!</button>
     </div>
   );
 }

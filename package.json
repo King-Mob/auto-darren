@@ -6,8 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist-server/index.js",
     "dev": "parcel web/index.html --dist-dir ./dist-web",
-    "build-web": "parcel build web/index.html --dist-dir ./dist-web",
-    "build-server": "npx tsc"
+    "build-web": "shx rm -rf dist-web && parcel build web/index.html --dist-dir ./dist-web",
+    "build-server": "npx tsc",
+    "build": "npm run build-web && npm run build-server"
   },
   "keywords": [
     "chat",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.9",
+    "shx": "^0.3.4",
     "typescript": "^5.3.3"
   }
 }
